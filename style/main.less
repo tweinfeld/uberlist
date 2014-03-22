@@ -1,0 +1,255 @@
+@import "bootstrap/variables.less";
+@import "bootstrap/mixins.less";
+
+body {
+  font-family: arial, sans-serif;
+  font-size: 14px;
+  text-align: center;
+  padding: 0;
+
+  #demo {
+    margin: auto;
+    width: 800px
+  }
+
+  div.uberlist {
+    text-align: left;
+    select, input[type=text] {
+
+      display: block;
+      width: 100%;
+      height: @input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+      padding: @padding-base-vertical @padding-base-horizontal;
+      font-size: @font-size-base;
+      line-height: @line-height-base;
+      color: @input-color;
+      background-color: @input-bg;
+      background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+      border: 1px solid @input-border;
+      border-radius: @input-border-radius;
+      .box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+      .transition(~"border-color ease-in-out .15s, box-shadow ease-in-out .15s");
+
+      // Customize the `:focus` state to imitate native WebKit styles.
+      .form-control-focus();
+
+      // Placeholder
+      .placeholder();
+
+      // Disabled and read-only inputs
+      //
+      // HTML5 says that controls under a fieldset > legend:first-child won't be
+      // disabled if the fieldset is disabled. Due to implementation difficulty, we
+      // don't honor that edge case; we style them as disabled anyway.
+      &[disabled],
+      &[readonly],
+      fieldset[disabled] & {
+        cursor: not-allowed;
+        background-color: @input-bg-disabled;
+        opacity: 1; // iOS fix for unreadable disabled content
+      }
+
+      // Reset height for `textarea`s
+      textarea& {
+        height: auto;
+      }
+      .input-size(@input-height-small; @padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @border-radius-small);
+    }
+
+    button {
+      cursor: pointer;
+      color: #4275d1;
+      background-color: #c9e3fc;
+      padding: 0.4rem 0.7rem 0.35rem;
+      border: none;
+      border-bottom: 2px solid darken(#c9e3fc, 13%);
+      outline: none;
+
+      &.green {
+        color: #fff;
+        background-color: #86e297;
+        border-bottom: 2px solid darken(#86e297, 23%);
+      }
+
+      &.red {
+        color: #fff;
+        background-color: #e18884;
+        border-bottom: 2px solid darken(#e18884, 23%);
+      }
+    }
+
+    width: 100%;
+    div.control-panel {
+
+      ul.actions, ul.filters, ul.paging, ul.alerts {
+
+        margin: 0 0 0.2rem 0;
+        padding: 0;
+        display: block;
+
+        li {
+          display: inline-block;
+        }
+      }
+
+      ul.paging {
+
+        vertical-align: center;
+        float: right;
+        li {
+
+        }
+      }
+
+      ul.actions {
+        .divider {
+          border-left: solid 1px #888;
+        }
+      }
+
+      ul.filters {
+
+        display: block;
+        position: relative;
+        input[type="text"]{
+          padding: 0 1rem;
+          width: 250px;
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+      }
+
+      ul.alerts {
+        li {
+          display: block;
+          position: relative;
+          div.filtered-warning {
+            .transition(all 0.2s);
+            text-align: center;
+            padding: 0.3rem 0;
+            color: darken(#fceb77, 50%);
+            font-weight: bold;
+            background-color: #fceb77;
+            &:before
+            {
+              content: " ";
+              position: absolute;
+              display: block;
+              width: 16px;
+              height: 14px;
+              left: 10px;
+              top: 6px;
+              opacity: 0.3;
+              background-repeat: no-repeat;
+              background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAOCAYAAAAmL5yKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RjExRDYwMkM5QzcyMTFFMzk2OUJGMzIzRkE1NDg0MEYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RjExRDYwMkQ5QzcyMTFFMzk2OUJGMzIzRkE1NDg0MEYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpGMTFENjAyQTlDNzIxMUUzOTY5QkYzMjNGQTU0ODQwRiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpGMTFENjAyQjlDNzIxMUUzOTY5QkYzMjNGQTU0ODQwRiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PkeK8LcAAAF4SURBVHjalJI9SwNBEIbfi/ErqIUiFzHhRNBGG8VSY+NfULEzpaA2MVpoKdgJInZifoR9QP0LVimUGKNJIwS/LybnO3t7suAFceC53Zt5Z3d2dqPL+G118klOgGuP4xow2cWxPUQbeeXH5IUUySKw5wATI2SJ81v6nnXcxMoaq7WRJ8Jdh46Acjfj4n+jaxMY5vSxn5+GWYFZzgdhEraB0yBZLMb5Dn0xfTTLADMGNuFOC6zAE9xMRhH8rzM2SM20ZkoW2dK7NHT5u0BpDEiIr1mp+GXG42osAPf7QHJAH1caHJGy30mZ8EayQbJKrFYVgY0ztkJNSee4opE9bkgHGzcHHOAPm6Wmj1q5qYeggjuyChz3+JX9WNO2Fab1UrMBHMoCNXGM+udOBY0yqafT3hcJi/FWUo4skPQrKISJ3ERCERaTHMlFDsiECYRaPq9oFT9jrsXn68VaNKzuOOqxRIvF0Lg8fesKOGdn5/Uj+491XgIX3wIMAJcztbtYJaORAAAAAElFTkSuQmCC);
+            }
+
+          }
+        }
+      }
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      color: #364e66;
+      tr {
+        background-color: darken(#f8f8f8, 3%);
+        &.selected {
+          background-color: darken(#e1ebfa, 3%);
+        }
+        &:nth-child(even){
+          background-color: #f8f8f8;
+          &.selected {
+            background-color: #e1ebfa;
+          }
+        }
+      }
+
+      thead {
+        tr {
+          background-color: #838383;
+          th {
+            color: #eee;
+          }
+          //border-bottom: solid 1px #838383;
+        }
+      }
+      td, th {
+        padding: 0.5rem;
+        //
+        //border: 1px solid #aaa;
+      }
+      tfoot {
+
+        border-top: solid 1px #838383;
+
+        tr {
+          background-color: transparent;
+          td {
+            padding: 0;
+            div {
+              color: darken(#e1ebfa, 50%);
+              font-size: 10px;
+              .box-sizing(border-box);
+              padding: 0.5rem;
+              background-color: #e1ebfa;
+              height: 0px;
+              overflow: hidden;
+              opacity: 0;
+              .transition(all 0.2s);
+            }
+
+          }
+        }
+
+        &.selected {
+         tr {
+           td {
+             div {
+               height: 30px;
+               opacity: 1;
+             }
+
+           }
+         }
+        }
+      }
+    }
+
+    &.ca-site-selection {
+      tr {
+        td:nth-child(1) {
+          width: 5%;
+          text-align: center;
+        }
+        td:nth-child(2) {
+          width: 5%;
+          text-align: center;
+          font-size: 10px;
+        }
+        td:nth-child(3) {
+          width: 30%;
+        }
+        td:nth-child(4) {
+          width: 30%;
+        }
+        td:nth-child(5) {
+          text-align: center;
+          width: 30%;
+        }
+      }
+    }
+  }
+
+  .tag {
+    border-radius: 3px;
+    padding: 0.2rem 0.8rem;
+    background-color: #9acefe;
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+  }
+}

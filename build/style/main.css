@@ -1,0 +1,239 @@
+body {
+  font-family: arial, sans-serif;
+  font-size: 14px;
+  text-align: center;
+  padding: 0;
+}
+body #demo {
+  margin: auto;
+  width: 800px;
+}
+body div.uberlist {
+  text-align: left;
+  width: 100%;
+}
+body div.uberlist select,
+body div.uberlist input[type=text] {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+body div.uberlist select:focus,
+body div.uberlist input[type=text]:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+body div.uberlist select::-moz-placeholder,
+body div.uberlist input[type=text]::-moz-placeholder {
+  color: #999999;
+  opacity: 1;
+}
+body div.uberlist select:-ms-input-placeholder,
+body div.uberlist input[type=text]:-ms-input-placeholder {
+  color: #999999;
+}
+body div.uberlist select::-webkit-input-placeholder,
+body div.uberlist input[type=text]::-webkit-input-placeholder {
+  color: #999999;
+}
+body div.uberlist select[disabled],
+body div.uberlist input[type=text][disabled],
+body div.uberlist select[readonly],
+body div.uberlist input[type=text][readonly],
+fieldset[disabled] body div.uberlist select,
+fieldset[disabled] body div.uberlist input[type=text] {
+  cursor: not-allowed;
+  background-color: #eeeeee;
+  opacity: 1;
+}
+textareabody div.uberlist select,
+textareabody div.uberlist input[type=text] {
+  height: auto;
+}
+selectbody div.uberlist select,
+selectbody div.uberlist input[type=text] {
+  height: 30px;
+  line-height: 30px;
+}
+textareabody div.uberlist select,
+textareabody div.uberlist input[type=text],
+select[multiple]body div.uberlist select,
+select[multiple]body div.uberlist input[type=text] {
+  height: auto;
+}
+body div.uberlist button {
+  cursor: pointer;
+  color: #4275d1;
+  background-color: #c9e3fc;
+  padding: 0.4rem 0.7rem 0.35rem;
+  border: none;
+  border-bottom: 2px solid #8ac2f9;
+  outline: none;
+}
+body div.uberlist button.green {
+  color: #fff;
+  background-color: #86e297;
+  border-bottom: 2px solid #2fc44a;
+}
+body div.uberlist button.red {
+  color: #fff;
+  background-color: #e18884;
+  border-bottom: 2px solid #c1352f;
+}
+body div.uberlist div.control-panel ul.actions,
+body div.uberlist div.control-panel ul.filters,
+body div.uberlist div.control-panel ul.paging,
+body div.uberlist div.control-panel ul.alerts {
+  margin: 0 0 0.2rem 0;
+  padding: 0;
+  display: block;
+}
+body div.uberlist div.control-panel ul.actions li,
+body div.uberlist div.control-panel ul.filters li,
+body div.uberlist div.control-panel ul.paging li,
+body div.uberlist div.control-panel ul.alerts li {
+  display: inline-block;
+}
+body div.uberlist div.control-panel ul.paging {
+  vertical-align: center;
+  float: right;
+}
+body div.uberlist div.control-panel ul.actions .divider {
+  border-left: solid 1px #888;
+}
+body div.uberlist div.control-panel ul.filters {
+  display: block;
+  position: relative;
+}
+body div.uberlist div.control-panel ul.filters input[type="text"] {
+  padding: 0 1rem;
+  width: 250px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+body div.uberlist div.control-panel ul.alerts li {
+  display: block;
+  position: relative;
+}
+body div.uberlist div.control-panel ul.alerts li div.filtered-warning {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  text-align: center;
+  padding: 0.3rem 0;
+  color: #716303;
+  font-weight: bold;
+  background-color: #fceb77;
+}
+body div.uberlist div.control-panel ul.alerts li div.filtered-warning:before {
+  content: " ";
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 14px;
+  left: 10px;
+  top: 6px;
+  opacity: 0.3;
+  background-repeat: no-repeat;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAOCAYAAAAmL5yKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RjExRDYwMkM5QzcyMTFFMzk2OUJGMzIzRkE1NDg0MEYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RjExRDYwMkQ5QzcyMTFFMzk2OUJGMzIzRkE1NDg0MEYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpGMTFENjAyQTlDNzIxMUUzOTY5QkYzMjNGQTU0ODQwRiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpGMTFENjAyQjlDNzIxMUUzOTY5QkYzMjNGQTU0ODQwRiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PkeK8LcAAAF4SURBVHjalJI9SwNBEIbfi/ErqIUiFzHhRNBGG8VSY+NfULEzpaA2MVpoKdgJInZifoR9QP0LVimUGKNJIwS/LybnO3t7suAFceC53Zt5Z3d2dqPL+G118klOgGuP4xow2cWxPUQbeeXH5IUUySKw5wATI2SJ81v6nnXcxMoaq7WRJ8Jdh46Acjfj4n+jaxMY5vSxn5+GWYFZzgdhEraB0yBZLMb5Dn0xfTTLADMGNuFOC6zAE9xMRhH8rzM2SM20ZkoW2dK7NHT5u0BpDEiIr1mp+GXG42osAPf7QHJAH1caHJGy30mZ8EayQbJKrFYVgY0ztkJNSee4opE9bkgHGzcHHOAPm6Wmj1q5qYeggjuyChz3+JX9WNO2Fab1UrMBHMoCNXGM+udOBY0yqafT3hcJi/FWUo4skPQrKISJ3ERCERaTHMlFDsiECYRaPq9oFT9jrsXn68VaNKzuOOqxRIvF0Lg8fesKOGdn5/Uj+491XgIX3wIMAJcztbtYJaORAAAAAElFTkSuQmCC);
+}
+body div.uberlist table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #364e66;
+}
+body div.uberlist table tr {
+  background-color: #f0f0f0;
+}
+body div.uberlist table tr.selected {
+  background-color: #d4e2f8;
+}
+body div.uberlist table tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+body div.uberlist table tr:nth-child(even).selected {
+  background-color: #e1ebfa;
+}
+body div.uberlist table thead tr {
+  background-color: #838383;
+}
+body div.uberlist table thead tr th {
+  color: #eee;
+}
+body div.uberlist table td,
+body div.uberlist table th {
+  padding: 0.5rem;
+}
+body div.uberlist table tfoot {
+  border-top: solid 1px #838383;
+}
+body div.uberlist table tfoot tr {
+  background-color: transparent;
+}
+body div.uberlist table tfoot tr td {
+  padding: 0;
+}
+body div.uberlist table tfoot tr td div {
+  color: #1f5ebd;
+  font-size: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  background-color: #e1ebfa;
+  height: 0px;
+  overflow: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+body div.uberlist table tfoot.selected tr td div {
+  height: 30px;
+  opacity: 1;
+}
+body div.uberlist.ca-site-selection tr td:nth-child(1) {
+  width: 5%;
+  text-align: center;
+}
+body div.uberlist.ca-site-selection tr td:nth-child(2) {
+  width: 5%;
+  text-align: center;
+  font-size: 10px;
+}
+body div.uberlist.ca-site-selection tr td:nth-child(3) {
+  width: 30%;
+}
+body div.uberlist.ca-site-selection tr td:nth-child(4) {
+  width: 30%;
+}
+body div.uberlist.ca-site-selection tr td:nth-child(5) {
+  text-align: center;
+  width: 30%;
+}
+body .tag {
+  border-radius: 3px;
+  padding: 0.2rem 0.8rem;
+  background-color: #9acefe;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+}
