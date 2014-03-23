@@ -5,7 +5,7 @@ var gulp = require('gulp'),
     reactify = require('reactify');
 
 gulp.task('browserify', function() {
-    gulp.src('src/main.js')
+    return gulp.src('src/main.js')
         .pipe(browserify({
             debug: true,
             transform: [node_underscorify, reactify],
@@ -15,15 +15,17 @@ gulp.task('browserify', function() {
 });
 
 gulp.task('less', function() {
-    gulp.src('style/main.less')
+    return gulp.src('style/main.less')
         .pipe(less())
         .pipe(gulp.dest('build/style'));
 });
 
-gulp.task('default', ["less", "browserify"], function() {
+gulp.task('watch', function() {
     gulp.watch(["style/main.less"], ["less"]);
     gulp.watch(["src/**"], ["browserify"]);
 });
+
+gulp.task('default', ["less", "browserify", "watch"]);
 
 gulp.on('error', function(){
     console.log('error');
