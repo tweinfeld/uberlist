@@ -1,6 +1,6 @@
 {
     "name": "Uberlist",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "The next generation of lists",
     "main": "src/main.js",
     "dependencies": {
